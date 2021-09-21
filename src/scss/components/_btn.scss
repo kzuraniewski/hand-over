@@ -1,0 +1,21 @@
+.btn {
+    display: inline-block;
+    margin: 1rem;
+    padding: 1rem;
+    width: 10rem;
+
+    border: 1px solid $color-black;
+
+    color: $color-black;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+
+    transition: 0.15s;
+
+    &:hover {
+        background-color: $color-yellow;
+    }
+}

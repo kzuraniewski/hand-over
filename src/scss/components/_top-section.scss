@@ -1,7 +1,12 @@
 .top-section {
     display: flex;
+    justify-content: space-between;
 
     > * {
         width: 50vw;
+    }
+
+    &__group {
+        padding: 2rem;
     }
 }

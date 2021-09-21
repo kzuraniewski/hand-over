@@ -8,7 +8,7 @@ export default function TopSection() {
         <div className='top-section'>
             <Hero />
 
-            <div>
+            <div className='top-section__group'>
                 <Header />
                 <CTA />
             </div>

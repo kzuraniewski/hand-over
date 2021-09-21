@@ -1,0 +1,19 @@
+.cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+
+    > *:not(:last-child) {
+        margin-bottom: 1.3rem;
+    }
+
+    &__title {
+        font-size: 1.7rem;
+        text-align: center;
+    }
+
+    &__decoration {
+        width: 40%;
+    }
+}

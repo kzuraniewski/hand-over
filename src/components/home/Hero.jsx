@@ -1,5 +1,6 @@
 import React from 'react';
+import hero from '../../assets/Home-Hero-Image.jpg';
 
 export default function Hero() {
-    return <div>Hero</div>;
+    return <img src={hero} alt='home' />;
 }

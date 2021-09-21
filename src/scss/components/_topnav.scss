@@ -2,9 +2,14 @@
 	display: flex;
 	flex-direction: column;
 
+	> *:not(:last-child) {
+		margin-bottom: 0.5rem;
+	}
+
 	&__auth {
 		display: flex;
 		justify-content: flex-end;
+		padding: 0 1rem;
 	}
 
 	&__main {
@@ -33,6 +38,7 @@
 
 		&--alt {
 			color: $color-gray;
+			border-width: 2px;
 
 			&:hover,
 			&:focus {

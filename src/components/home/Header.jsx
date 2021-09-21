@@ -1,44 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 
 export default function Header() {
     return (
         <header>
             <nav className='topnav'>
+                {/* authorization */}
                 <div className='topnav__auth'>
-                    <Link className='topnav__link topnav__link--alt' to='/logowanie'>
+                    <RouterLink className='topnav__link topnav__link--alt' to='/logowanie'>
                         Zaloguj
-                    </Link>
-                    <Link className='topnav__link topnav__link--alt' to='/rejestracja'>
+                    </RouterLink>
+                    <RouterLink className='topnav__link topnav__link--alt' to='/rejestracja'>
                         Załóż konto
-                    </Link>
+                    </RouterLink>
                 </div>
 
+                {/* scroll */}
                 <ul className='topnav__main'>
                     <li>
-                        <a className='topnav__link' href='#start'>
+                        <ScrollLink className='topnav__link' to='#start'>
                             Start
-                        </a>
+                        </ScrollLink>
                     </li>
                     <li>
-                        <a className='topnav__link' href='#data'>
+                        <ScrollLink className='topnav__link' to='#data'>
                             O co chodzi?
-                        </a>
+                        </ScrollLink>
                     </li>
                     <li>
-                        <a className='topnav__link' href='#about-us'>
+                        <ScrollLink className='topnav__link' to='#about-us'>
                             O nas
-                        </a>
+                        </ScrollLink>
                     </li>
                     <li>
-                        <a className='topnav__link' href='#helping'>
+                        <ScrollLink className='topnav__link' to='#helping'>
                             Fundacja i organizacje
-                        </a>
+                        </ScrollLink>
                     </li>
                     <li>
-                        <a className='topnav__link' href='#contact'>
+                        <ScrollLink className='topnav__link' to='#contact'>
                             Kontakt
-                        </a>
+                        </ScrollLink>
                     </li>
                 </ul>
             </nav>

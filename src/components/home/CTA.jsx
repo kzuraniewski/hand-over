@@ -13,7 +13,7 @@ export default function CTA() {
                         Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
                     </h1>
 
-                    <img className='cta__decoration' src={decoration} alt='' />
+                    <img className='decoration' src={decoration} alt='' />
 
                     <div>
                         <Link to='/logowanie' className='btn'>

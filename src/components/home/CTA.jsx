@@ -16,10 +16,10 @@ export default function CTA() {
                     <img className='cta__decoration' src={decoration} alt='' />
 
                     <div>
-                        <Link to='/oddaj-rzeczy' className='btn'>
+                        <Link to='/logowanie' className='btn'>
                             Oddaj rzeczy
                         </Link>
-                        <Link to='/oddaj-rzeczy' className='btn'>
+                        <Link to='/logowanie' className='btn'>
                             Zorganizuj zbiórkę
                         </Link>
                     </div>

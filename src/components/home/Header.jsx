@@ -19,27 +19,57 @@ export default function Header() {
                 {/* scroll */}
                 <ul className='topnav__main'>
                     <li>
-                        <ScrollLink className='topnav__link' to='#start'>
+                        <ScrollLink
+                            className='topnav__link'
+                            to='#start'
+                            smooth
+                            offset={-70}
+                            duration={500}
+                        >
                             Start
                         </ScrollLink>
                     </li>
                     <li>
-                        <ScrollLink className='topnav__link' to='#data'>
+                        <ScrollLink
+                            className='topnav__link'
+                            to='#data'
+                            smooth
+                            offset={-70}
+                            duration={500}
+                        >
                             O co chodzi?
                         </ScrollLink>
                     </li>
                     <li>
-                        <ScrollLink className='topnav__link' to='#about-us'>
+                        <ScrollLink
+                            className='topnav__link'
+                            to='#about-us'
+                            smooth
+                            offset={-70}
+                            duration={500}
+                        >
                             O nas
                         </ScrollLink>
                     </li>
                     <li>
-                        <ScrollLink className='topnav__link' to='#helping'>
+                        <ScrollLink
+                            className='topnav__link'
+                            to='#helping'
+                            smooth
+                            offset={-70}
+                            duration={500}
+                        >
                             Fundacja i organizacje
                         </ScrollLink>
                     </li>
                     <li>
-                        <ScrollLink className='topnav__link' to='#contact'>
+                        <ScrollLink
+                            className='topnav__link'
+                            to='#contact'
+                            smooth
+                            offset={-70}
+                            duration={500}
+                        >
                             Kontakt
                         </ScrollLink>
                     </li>

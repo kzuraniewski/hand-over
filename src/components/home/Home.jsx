@@ -1,4 +1,5 @@
-import TopSection from './TopSection';
+import Header from './Header';
+import CTA from './CTA';
 import About from './About';
 import Contact from './Contact';
 import Data from './Data';
@@ -9,7 +10,8 @@ import Steps from './Steps';
 export default function Home() {
     return (
         <>
-            <TopSection />
+            <Header />
+            <CTA />
             <Data />
             <About />
             <Steps />

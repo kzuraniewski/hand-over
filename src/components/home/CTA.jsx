@@ -4,20 +4,26 @@ import { Link } from 'react-router-dom';
 
 export default function CTA() {
     return (
-        <div className='cta'>
-            <h1 className='cta__title'>
-                Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
-            </h1>
+        <div id='start' className='cta'>
+            <div className='cta__hero' />
 
-            <img className='cta__decoration' src={decoration} alt='' />
+            <div className='cta__content-container'>
+                <div className='cta__content'>
+                    <h1 className='cta__title'>
+                        Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
+                    </h1>
 
-            <div>
-                <Link to='/' className='btn'>
-                    Oddaj rzeczy
-                </Link>
-                <Link to='/' className='btn'>
-                    Zorganizuj zbiórkę
-                </Link>
+                    <img className='cta__decoration' src={decoration} alt='' />
+
+                    <div>
+                        <Link to='/oddaj-rzeczy' className='btn'>
+                            Oddaj rzeczy
+                        </Link>
+                        <Link to='/oddaj-rzeczy' className='btn'>
+                            Zorganizuj zbiórkę
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     );

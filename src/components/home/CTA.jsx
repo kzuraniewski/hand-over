@@ -1,5 +1,5 @@
 import React from 'react';
-import decoration from '../../assets/Decoration.svg';
+import Decoration from './Decoration';
 import { Link } from 'react-router-dom';
 
 export default function CTA() {
@@ -8,12 +8,12 @@ export default function CTA() {
             <div className='cta__hero' />
 
             <div className='cta__content-container'>
-                <div className='cta__content'>
-                    <h1 className='cta__title'>
+                <div className='content-group'>
+                    <h1 className='content-group__title'>
                         Zacznij pomagać! <br /> Oddaj niechciane rzeczy w zaufane ręce
                     </h1>
 
-                    <img className='decoration' src={decoration} alt='' />
+                    <Decoration />
 
                     <div>
                         <Link to='/logowanie' className='btn'>

@@ -20,7 +20,7 @@ import loop from '../../assets/Icon-4.svg';
 
 export default function Steps() {
     return (
-        <div className='content-group'>
+        <div id='steps' className='content-group'>
             <h1 className='content-group__title'>Wystarczą 4 proste kroki</h1>
 
             <Decoration />
@@ -41,7 +41,7 @@ export default function Steps() {
                 ))}
             </div>
 
-            <Link className='btn' to='/oddaj-rzeczy'>
+            <Link className='btn' to='/logowanie'>
                 Oddaj rzeczy
             </Link>
         </div>

@@ -18,61 +18,19 @@ export default function Header() {
 
                 {/* scroll */}
                 <ul className='topnav__main'>
-                    <li>
-                        <ScrollLink
-                            className='topnav__link'
-                            to='#start'
-                            smooth
-                            offset={-70}
-                            duration={500}
-                        >
-                            Start
-                        </ScrollLink>
-                    </li>
-                    <li>
-                        <ScrollLink
-                            className='topnav__link'
-                            to='#data'
-                            smooth
-                            offset={-70}
-                            duration={500}
-                        >
-                            O co chodzi?
-                        </ScrollLink>
-                    </li>
-                    <li>
-                        <ScrollLink
-                            className='topnav__link'
-                            to='#about-us'
-                            smooth
-                            offset={-70}
-                            duration={500}
-                        >
-                            O nas
-                        </ScrollLink>
-                    </li>
-                    <li>
-                        <ScrollLink
-                            className='topnav__link'
-                            to='#helping'
-                            smooth
-                            offset={-70}
-                            duration={500}
-                        >
-                            Fundacja i organizacje
-                        </ScrollLink>
-                    </li>
-                    <li>
-                        <ScrollLink
-                            className='topnav__link'
-                            to='#contact'
-                            smooth
-                            offset={-70}
-                            duration={500}
-                        >
-                            Kontakt
-                        </ScrollLink>
-                    </li>
+                    {[
+                        ['Start', 'start'],
+                        ['O co chodzi?', 'steps'],
+                        ['O nas', 'about'],
+                        ['Fundacje i organizacje', 'helping'],
+                        ['Kontakt', 'contact'],
+                    ].map(([title, id]) => (
+                        <li>
+                            <ScrollLink className='topnav__link' to={id} smooth duration={500}>
+                                {title}
+                            </ScrollLink>
+                        </li>
+                    ))}
                 </ul>
             </nav>
         </header>

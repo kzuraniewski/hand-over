@@ -9,4 +9,10 @@ body {
 
 .decoration {
     width: 200px;
+
+    &.decoration--small {
+        width: 6rem;
+        height: 1px;
+        background-color: $color-black;
+    }
 }

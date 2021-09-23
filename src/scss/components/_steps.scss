@@ -1,0 +1,41 @@
+.steps {
+    padding: 50px;
+    width: 100%;
+
+    background-color: $color-lightgray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        max-width: 10rem;
+
+        &:not(:last-child) {
+            margin-right: 10vw;
+        }
+
+        > :not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+
+    &__icon {
+        width: 5rem;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+
+    &__description {
+        text-align: center;
+        font-size: 0.9rem;
+        line-height: 1.2;
+    }
+}

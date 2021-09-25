@@ -1,0 +1,78 @@
+.helping {
+    &__select {
+        padding: 10px 0;
+
+        display: flex;
+        justify-content: space-around;
+
+        > :not(:last-child) {
+            margin-right: 90px;
+        }
+    }
+
+    &__select-label {
+        width: 12rem;
+        height: 5rem;
+
+        background: none;
+        border: 1px solid transparent;
+        font-size: 1.5rem;
+
+        transition: 0.1s;
+
+        &--selected {
+            border: 1px solid $color-black;
+        }
+    }
+
+    &__description {
+        text-align: center;
+        line-height: 1.4;
+        width: 30rem;
+    }
+
+    &__card {
+        padding: 0 30px;
+        width: 100%;
+        max-width: 70rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        > :not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__records-wrapper {
+        width: 100%;
+    }
+
+    &__record {
+        padding: 25px 0;
+        font-family: $font-alt;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid $color-black;
+        }
+    }
+
+    &__record-title {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+    }
+
+    &__record-description {
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+
+    &__record-tags {
+        font-size: 0.8rem;
+    }
+}

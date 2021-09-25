@@ -1,12 +1,43 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Decoration from './Decoration';
 import helpingData from '../../data/helping.data';
 
+function RecordNavigation({ scopeSize = 3, scopeIndex, setScopeIndex, records }) {
+    const buttons = [];
+
+    for (let i = 0; i < records.length / scopeSize; i++) {
+        buttons.push(
+            <button
+                key={i}
+                className={`helping__select-label helping__select-label--small${
+                    scopeIndex === i ? ' helping__select-label--selected' : ''
+                }`}
+                onClick={() => setScopeIndex(i)}
+            >
+                {i + 1}
+            </button>
+        );
+    }
+
+    return buttons.length > 1 ? (
+        <div className='helping__select'>{buttons}</div>
+    ) : (
+        <React.Fragment />
+    );
+}
+
 export default function Helping() {
-    const selectLabels = [useRef(null), useRef(null), useRef(null)];
+    const recordScopeSize = 3;
+
     const [selectionIndex, setSelectionIndex] = useState(0);
+    const [recordScopeIndex, setRecordScopeIndex] = useState(0);
+    const selectLabels = [useRef(null), useRef(null), useRef(null)];
 
     const { intro, records } = helpingData[selectionIndex];
+
+    useEffect(() => {
+        setRecordScopeIndex(0);
+    }, [selectionIndex]);
 
     return (
         <div className='content-group helping'>
@@ -44,17 +75,31 @@ export default function Helping() {
 
                 {/* organisations */}
                 <div className='helping__records-wrapper'>
-                    {records?.map(({ title, tags, description }, recordIndex) => (
-                        <div key={recordIndex} className='helping__record'>
-                            <div>
-                                <h2 className='helping__record-title'>{title}</h2>
-                                <span className='helping__record-description'>{description}</span>
-                            </div>
+                    {records
+                        .slice(
+                            recordScopeSize * recordScopeIndex,
+                            recordScopeSize * (recordScopeIndex + 1)
+                        )
+                        ?.map(({ title, tags, description }, recordIndex) => (
+                            <div key={recordIndex} className='helping__record'>
+                                <div>
+                                    <h2 className='helping__record-title'>{title}</h2>
+                                    <span className='helping__record-description'>
+                                        {description}
+                                    </span>
+                                </div>
 
-                            <span className='helping__record-tags'>{tags?.join(', ')}</span>
-                        </div>
-                    ))}
+                                <span className='helping__record-tags'>{tags?.join(', ')}</span>
+                            </div>
+                        ))}
                 </div>
+
+                <RecordNavigation
+                    scopeSize={3}
+                    scopeIndex={recordScopeIndex}
+                    setScopeIndex={setRecordScopeIndex}
+                    records={records}
+                />
             </div>
         </div>
     );

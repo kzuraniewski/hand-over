@@ -4,10 +4,6 @@
 
         display: flex;
         justify-content: space-around;
-
-        > :not(:last-child) {
-            margin-right: 90px;
-        }
     }
 
     &__select-label {
@@ -20,8 +16,22 @@
 
         transition: 0.1s;
 
+        &:not(:last-child) {
+            margin-right: 90px;
+        }
+
         &--selected {
             border: 1px solid $color-black;
+        }
+
+        &--small {
+            width: auto;
+            height: auto;
+            padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
         }
     }
 

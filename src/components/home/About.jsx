@@ -3,7 +3,6 @@ import people from '../../assets/People.jpg';
 import signature from '../../assets/Signature.svg';
 import Decoration from './Decoration';
 
-//TODO
 export default function About() {
     return (
         <section className='about'>

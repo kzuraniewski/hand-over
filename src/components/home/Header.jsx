@@ -24,8 +24,8 @@ export default function Header() {
                         ['O nas', 'about'],
                         ['Fundacje i organizacje', 'helping'],
                         ['Kontakt', 'contact'],
-                    ].map(([title, id]) => (
-                        <li>
+                    ].map(([title, id], index) => (
+                        <li key={index}>
                             <ScrollLink className='topnav__link' to={id} smooth duration={500}>
                                 {title}
                             </ScrollLink>

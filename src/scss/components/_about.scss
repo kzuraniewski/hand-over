@@ -15,6 +15,11 @@
         padding: 50px 130px;
     }
 
+    &__description {
+        text-align: center;
+        line-height: 1.8;
+    }
+
     &__signature {
         align-self: flex-end;
         width: 9rem;

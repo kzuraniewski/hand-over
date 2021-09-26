@@ -5,19 +5,21 @@ import ContentGroup from '../utility/ContentGroup';
 function RecordNavigation({ scopeSize = 3, scopeIndex, setScopeIndex, records }) {
     const buttons = [];
 
-    for (let i = 0; i < records.length / scopeSize; i++) {
-        buttons.push(
-            <button
-                key={i}
-                className={`helping__select-label helping__select-label--small${
-                    scopeIndex === i ? ' helping__select-label--selected' : ''
-                }`}
-                onClick={() => setScopeIndex(i)}
-            >
-                {i + 1}
-            </button>
-        );
-    }
+    useEffect(() => {
+        for (let i = 0; i < records.length / scopeSize; i++) {
+            buttons.push(
+                <button
+                    key={i}
+                    className={`helping__select-label helping__select-label--small${
+                        scopeIndex === i ? ' helping__select-label--selected' : ''
+                    }`}
+                    onClick={() => setScopeIndex(i)}
+                >
+                    {i + 1}
+                </button>
+            );
+        }
+    });
 
     return buttons.length > 1 ? (
         <div className='helping__select'>{buttons}</div>

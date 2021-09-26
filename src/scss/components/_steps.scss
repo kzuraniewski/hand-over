@@ -38,4 +38,10 @@
         font-size: 0.9rem;
         line-height: 1.2;
     }
+
+    &__division {
+        width: 6rem;
+        height: 1px;
+        background-color: $color-black;
+    }
 }

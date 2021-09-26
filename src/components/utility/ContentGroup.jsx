@@ -6,7 +6,12 @@ export default function ContentGroup({ title, children }) {
         <div className='content-group'>
             <h1 className='content-group__title'>Skontaktuj się z nami</h1>
 
-            <img src={decoration} alt='' role='presentation' className='decoration' />
+            <img
+                src={decoration}
+                alt=''
+                role='presentation'
+                className='content-group__decoration'
+            />
 
             {children}
         </div>

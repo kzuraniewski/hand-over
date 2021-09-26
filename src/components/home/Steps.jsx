@@ -20,10 +20,8 @@ export default function Steps() {
                         <div key={index} className='steps__col'>
                             <img src={src} alt='' role='presentation' className='steps__icon' />
                             <h2 className='steps__title'>{title}</h2>
-                            {/* <Decoration small /> */}
 
-                            {/* TODO: steps__divisor */}
-                            <div className='steps__divisor' />
+                            <div className='steps__division' />
 
                             <p className='steps__description'>{desc}</p>
                         </div>

@@ -1,0 +1,42 @@
+.form {
+    width: 100%;
+    max-width: 40rem;
+
+    :not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        > * {
+            width: 100%;
+        }
+
+        :not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__input {
+        background: none;
+        border: none;
+        border-bottom: 1px solid $color-black;
+
+        &::placeholder {
+            color: $color-lightgray;
+        }
+    }
+
+    &__label {
+        font-size: 0.8rem;
+
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin-top: 7px;
+        }
+    }
+}

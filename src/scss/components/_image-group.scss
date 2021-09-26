@@ -1,0 +1,30 @@
+.image-group {
+    &__image {
+        flex-shrink: 0;
+    }
+
+    &__content {
+        padding: 0 30px;
+    }
+
+    $self: &;
+    &#{&}--overlay {
+        position: relative;
+        display: block;
+
+        #{$self}__image {
+            opacity: 0.25;
+            width: 100vw;
+            height: 50rem;
+            object-fit: cover;
+            object-position: left;
+        }
+
+        #{$self}__content {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+}

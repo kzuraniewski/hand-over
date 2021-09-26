@@ -8,7 +8,7 @@ export default function About() {
         <section className='about'>
             <div className='about__content'>
                 <ContentGroup title='O nas'>
-                    <p className='content-group__description'>
+                    <p className='about__description'>
                         Nori grape silver beet broccoli kombu beet greens fava bean potato quandong
                         celery. Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens
                         parsnip.

@@ -8,7 +8,9 @@ export default function CTA() {
             <div className='cta__hero' />
 
             <div className='cta__content-container'>
-                <ContentGroup title='Zacznij pomagać! Oddaj niechciane rzeczy w zaufane ręce'>
+                <ContentGroup
+                    title={['Zacznij pomagać!', 'Oddaj niechciane rzeczy w zaufane ręce']}
+                >
                     <div>
                         <Link to='/logowanie' className='btn'>
                             Oddaj rzeczy

@@ -1,30 +1,34 @@
 .image-group {
+    height: 660px;
+
     &__image {
         flex-shrink: 0;
     }
 
-    &__content {
-        padding: 0 30px;
-    }
-
     $self: &;
-    &#{&}--overlay {
+    &--overlay {
         position: relative;
         display: block;
 
         #{$self}__image {
             opacity: 0.25;
             width: 100vw;
-            height: 50rem;
+            height: inherit;
             object-fit: cover;
-            object-position: left;
+            object-position: top;
         }
 
         #{$self}__content {
+            width: 30rem;
+            height: inherit;
+
             position: absolute;
+            top: 0;
             right: 0;
-            top: 50%;
-            transform: translateY(-50%);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     }
 }

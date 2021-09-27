@@ -9,6 +9,21 @@ export function FormInput({ label, placeholder = '' }) {
     );
 }
 
+export function FormTextarea({ label, placeholder = '' }) {
+    return (
+        <label className='form__label'>
+            {label}
+            <textarea
+                className='form__input'
+                name={label}
+                cols={30}
+                rows={7}
+                placeholder={placeholder}
+            />
+        </label>
+    );
+}
+
 export function FormRow({ children }) {
     return <div className='form__row'>{children}</div>;
 }

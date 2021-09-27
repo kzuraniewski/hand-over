@@ -24,6 +24,9 @@
         border: none;
         border-bottom: 1px solid $color-black;
 
+        margin-top: 10px;
+        resize: none;
+
         &::placeholder {
             color: $color-lightgray;
         }
@@ -31,6 +34,7 @@
 
     &__label {
         font-size: 0.8rem;
+        font-weight: bolder;
 
         display: flex;
         flex-direction: column;

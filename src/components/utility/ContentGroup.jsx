@@ -4,10 +4,9 @@ import decoration from '../../assets/Decoration.svg';
 /**
  * @param {object} props
  * @param {string | string[]} props.title
- * @param {string} [props.className]
  * @param {object} props.children
  */
-export default function ContentGroup({ title, children, className }) {
+export default function ContentGroup({ title, children }) {
     /**
      * If the title is an array, then returns it converted to JSX with <br />'s
      * @returns {JSX.Element[] | string | string[]}
@@ -26,7 +25,7 @@ export default function ContentGroup({ title, children, className }) {
     };
 
     return (
-        <div className={`content-group${className ? ' ' + className : ''}`}>
+        <div className={`content-group`}>
             <h1 className='content-group__title'>{convertedTitle()}</h1>
 
             <img

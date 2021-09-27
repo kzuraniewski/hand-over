@@ -39,7 +39,7 @@ export function FormTextarea({ label, placeholder = '' }) {
  * @param {string} props.label
  */
 export function FormSubmit({ label }) {
-    return <input className='btn' type='submit' value={label} />;
+    return <input className='btn btn--small form__submit' type='submit' value={label} />;
 }
 
 export function FormRow({ children }) {

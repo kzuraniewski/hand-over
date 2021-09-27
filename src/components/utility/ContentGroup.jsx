@@ -13,11 +13,11 @@ export default function ContentGroup({ title, children }) {
      */
     const convertedTitle = () => {
         if (Array.isArray(title) && title.length > 1) {
-            return title.map(el => (
-                <>
+            return title.map((el, index) => (
+                <React.Fragment key={index}>
                     <br />
                     {el}
-                </>
+                </React.Fragment>
             ));
         }
 

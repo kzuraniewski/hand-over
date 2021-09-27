@@ -1,19 +1,33 @@
 import React from 'react';
 import decoration from '../../assets/Decoration.svg';
 
-export default function ContentGroup({ title, children }) {
-    if (Array.isArray(title) && title.length > 1) {
-        title = title.map(el => (
-            <>
-                <br />
-                {el}
-            </>
-        ));
-    }
+/**
+ * @param {object} props
+ * @param {string | string[]} props.title
+ * @param {string} [props.className]
+ * @param {object} props.children
+ */
+export default function ContentGroup({ title, children, className }) {
+    /**
+     * If the title is an array, then returns it converted to JSX with <br />'s
+     * @returns {JSX.Element[] | string | string[]}
+     */
+    const convertedTitle = () => {
+        if (Array.isArray(title) && title.length > 1) {
+            return title.map(el => (
+                <>
+                    <br />
+                    {el}
+                </>
+            ));
+        }
+
+        return title;
+    };
 
     return (
-        <div className='content-group'>
-            <h1 className='content-group__title'>{title}</h1>
+        <div className={`content-group${className ? ' ' + className : ''}`}>
+            <h1 className='content-group__title'>{convertedTitle()}</h1>
 
             <img
                 src={decoration}

@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * @param {object} props
+ * @param {string} props.label
+ * @param {string} [props.placeholder = '']
+ */
 export function FormInput({ label, placeholder = '' }) {
     return (
         <label className='form__label'>
@@ -9,6 +14,11 @@ export function FormInput({ label, placeholder = '' }) {
     );
 }
 
+/**
+ * @param {object} props
+ * @param {string} props.label
+ * @param {string} [props.placeholder = '']
+ */
 export function FormTextarea({ label, placeholder = '' }) {
     return (
         <label className='form__label'>
@@ -22,6 +32,14 @@ export function FormTextarea({ label, placeholder = '' }) {
             />
         </label>
     );
+}
+
+/**
+ * @param {object} props
+ * @param {string} props.label
+ */
+export function FormSubmit({ label }) {
+    return <input className='btn' type='submit' value={label} />;
 }
 
 export function FormRow({ children }) {

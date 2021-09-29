@@ -24,7 +24,7 @@ export default function Contact() {
         return re.test(String(email).toLowerCase());
     };
 
-    const validateName = name => !name.trim().includes(' ');
+    const validateName = name => name.length && !name.trim().includes(' ');
 
     const validateMessage = message => message.length >= 120;
 
@@ -59,7 +59,7 @@ export default function Contact() {
             <ImageGroup title='Skontaktuj się z nami' src={pile} alt='ubrania' overlay>
                 <form className='form' onSubmit={e => handleSubmit(e)}>
                     {showSubmitSuccess && (
-                        <div className='form__status'>
+                        <div className='form__success'>
                             Wiadomość została wysłana! Wkrótce się skontaktujemy.
                         </div>
                     )}

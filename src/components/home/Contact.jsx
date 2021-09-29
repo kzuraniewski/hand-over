@@ -49,9 +49,11 @@ export default function Contact() {
                 .then(res => res.json())
                 .then(json => {
                     setShowSubmitSuccess(json.status === 'success');
-                    console.log(json);
+
+                    //clear input fields
+                    for (const key in inputRefs) inputRefs[key].current.value = '';
                 });
-        }
+        } else setShowSubmitSuccess(false);
     };
 
     return (
@@ -100,7 +102,7 @@ export default function Contact() {
                         <textarea
                             ref={inputRefs.message}
                             cols={30}
-                            rows={4}
+                            rows={5}
                             className='form__input'
                             placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
                         />

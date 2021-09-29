@@ -5,16 +5,13 @@ import NotFound from './components/NotFound';
 
 function App() {
     return (
-        <>
+        <BrowserRouter>
             <Header />
-
-            <BrowserRouter>
-                <Switch>
-                    <Route exact path='/' component={Home}></Route>
-                    <Route component={NotFound} />
-                </Switch>
-            </BrowserRouter>
-        </>
+            <Switch>
+                <Route exact path='/' component={Home}></Route>
+                <Route component={NotFound} />
+            </Switch>
+        </BrowserRouter>
     );
 }
 

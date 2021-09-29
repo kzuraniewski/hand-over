@@ -6,10 +6,6 @@
     flex-direction: column;
     align-items: flex-end;
 
-    :not(:last-child) {
-        margin-bottom: 10px;
-    }
-
     &__row {
         display: flex;
         justify-content: space-between;
@@ -47,6 +43,10 @@
             margin-top: 7px;
             width: 100%;
         }
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
     }
 
     &__submit {
@@ -54,5 +54,19 @@
 
         font-size: 0.9rem;
         text-transform: capitalize;
+    }
+
+    &__success {
+        color: green;
+        text-align: center;
+
+        width: 15rem;
+        margin: 0 auto 30px;
+    }
+
+    &__error-message {
+        color: red;
+        font-size: 0.6rem;
+        margin-top: 5px;
     }
 }

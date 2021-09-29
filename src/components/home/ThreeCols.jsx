@@ -3,7 +3,7 @@ import colData from '../../data/threecols.data';
 
 export default function ThreeCols() {
     return (
-        <div className='three-cols'>
+        <section className='three-cols'>
             {colData.map(({ number, title, description }, index) => (
                 <div key={index} className='three-cols__col'>
                     <div className='three-cols__number'>{number}</div>
@@ -11,6 +11,6 @@ export default function ThreeCols() {
                     <p className='three-cols__description'>{description}</p>
                 </div>
             ))}
-        </div>
+        </section>
     );
 }

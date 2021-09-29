@@ -4,7 +4,7 @@ import ContentGroup from '../utility/ContentGroup';
 
 export default function CTA() {
     return (
-        <div id='start' className='cta'>
+        <section id='start' className='cta'>
             <div className='cta__hero' />
 
             <div className='cta__content-container'>
@@ -21,6 +21,6 @@ export default function CTA() {
                     </div>
                 </ContentGroup>
             </div>
-        </div>
+        </section>
     );
 }

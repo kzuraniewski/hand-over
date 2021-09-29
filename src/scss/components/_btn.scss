@@ -25,4 +25,18 @@
         height: auto;
         padding: 0.3rem 3rem;
     }
+
+    &--lowercase {
+        text-transform: none;
+    }
+
+    &--borderless {
+        border: none;
+        padding: 0;
+
+        &:hover {
+            color: $color-yellow;
+            background: transparent;
+        }
+    }
 }

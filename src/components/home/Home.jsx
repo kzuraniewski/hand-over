@@ -1,4 +1,3 @@
-import Header from './Header';
 import CTA from './CTA';
 import About from './About';
 import Contact from './Contact';
@@ -10,7 +9,6 @@ import Steps from './Steps';
 export default function Home() {
     return (
         <>
-            <Header />
             <CTA />
             <ThreeCols />
             <Steps />

@@ -1,25 +1,35 @@
 import React from 'react';
 import pile from '../../assets/Background-Contact-Form.jpg';
-import { Form, FormInput, FormTextarea, FormSubmit, FormRow } from '../utility/Form';
 import ImageGroup from '../utility/ImageGroup';
 
 export default function Contact() {
     return (
         <section id='contact' className='contact'>
             <ImageGroup title='Skontaktuj się z nami' src={pile} alt='ubrania' overlay>
-                <Form>
-                    <FormRow>
-                        <FormInput label='Wpisz swoje imię' placeholder='Krzysztof' />
-                        <FormInput label='Wpisz swój email' placeholder='abc@xyz.pl' />
-                    </FormRow>
+                <form className='form'>
+                    <div className='form__row'>
+                        <label className='form__label'>
+                            Wpisz swoje imię
+                            <input type='text' className='form__input' placeholder='Krzysztof' />
+                        </label>
+                        <label className='form__label'>
+                            Wpisz swój email
+                            <input type='text' className='form__input' placeholder='abc@xyz.pl' />
+                        </label>
+                    </div>
 
-                    <FormTextarea
-                        label='Wpisz swoją wiadomość'
-                        placeholder='Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam placeat exercitationem voluptate. Provident necessitatibus rerum ad, nulla, corporis officia aliquam asperiores neque itaque pariatur consequuntur! Incidunt recusandae tempore eos assumenda?'
-                    />
+                    <label className='form__label'>
+                        Wpisz swoją wiadomość
+                        <textarea
+                            cols={30}
+                            rows={7}
+                            className='form__input'
+                            placeholder='Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem natus, voluptatum nobis doloremque mollitia suscipit magni harum at necessitatibus. Expedita magnam voluptas omnis hic corporis ipsum aspernatur velit alias quae.'
+                        />
+                    </label>
 
-                    <FormSubmit label='wyślij' />
-                </Form>
+                    <input type='submit' className='btn btn--small form__submit' />
+                </form>
             </ImageGroup>
         </section>
     );

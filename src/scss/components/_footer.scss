@@ -1,13 +1,16 @@
 .footer {
     $icons-width: 2.4rem;
+    $self-height: 2.5rem;
 
     padding: 10px 90px;
     width: 100%;
-    height: 2.5rem;
+    height: $self-height;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    margin-top: -$self-height;
 
     &__empty {
         width: $icons-width;

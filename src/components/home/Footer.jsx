@@ -8,9 +8,11 @@ export default function Footer() {
             <div className='footer__text'>Copyright by Coders Lab</div>
 
             <div className='footer__icon-wrapper'>
+                {/* eslint-disable-next-line */}
                 <a href='#' className='footer__icon'>
                     <i className='fab fa-facebook-square'></i>
                 </a>
+                {/* eslint-disable-next-line */}
                 <a href='#' className='footer__icon'>
                     <i className='fab fa-instagram'></i>
                 </a>

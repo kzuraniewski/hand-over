@@ -6,15 +6,23 @@ export default function Login() {
         <section className='user-auth'>
             <ContentGroup title='Zaloguj się'>
                 <form className='form user-auth__form'>
-                    <input type='text' className='form__input' />
-                    <input type='text' className='form__input' />
+                    <label className='form__label'>
+                        Email
+                        <input type='text' className='form__input' />
+                    </label>
+                    <label className='form__label'>
+                        Hasło
+                        <input type='text' className='form__input' />
+                    </label>
                 </form>
 
                 <div className='user-auth__btn-wrapper'>
-                    <button className='btn btn--small btn--lowercase btn--borderless'>
+                    <button className='user-auth__btn btn btn--small btn--lowercase btn--borderless'>
                         Załóż konto
                     </button>
-                    <button className='btn btn--small btn--lowercase'>Zaloguj się</button>
+                    <button className='user-auth__btn btn btn--small btn--lowercase'>
+                        Zaloguj się
+                    </button>
                 </div>
             </ContentGroup>
         </section>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useContext } from 'react';
 
 const defaultErrorMessage = 'To pole nie może być puste';
 
@@ -8,23 +8,7 @@ const defaultErrorMessage = 'To pole nie może być puste';
  */
 const defaultValidation = value => !value.length;
 
-/**
- * Returns whether the given input is valid
- * @param {object} ref
- * @param {(value: string) => boolean} validation
- */
-// const useValidation = ([ref], validation) => {
-//     const mount = useRef(true);
-//     const [error, setError] = useState(false);
-
-//     useEffect(() => {
-//         if (mount) return;
-
-//         setError(validation(ref.current.value));
-//     }, [ref, validation, ref.current?.value]);
-
-//     return [error];
-// };
+const FormContext = React.createContext((ref, validation) => {});
 
 /**
  * @param {object} props
@@ -39,14 +23,18 @@ export function FormInput({
     validation = defaultValidation,
     errorMessage = defaultErrorMessage,
 }) {
-    // const ref = useRef(null);
-    // const [showErrorMessage] = useValidation([ref], validation);
+    const addInput = useContext(FormContext);
+    const ref = useRef(null);
     const showErrorMessage = false;
+
+    useEffect(() => {
+        addInput(ref, validation);
+    }, [addInput, validation]);
 
     return (
         <label className='form__label'>
             {label}
-            <input type='text' className='form__input' placeholder={placeholder} />
+            <input ref={ref} type='text' className='form__input' placeholder={placeholder} />
             {showErrorMessage && <div className='form__error-message'>{errorMessage}</div>}
         </label>
     );
@@ -65,15 +53,12 @@ export function FormTextarea({
     validation = defaultValidation,
     errorMessage = defaultErrorMessage,
 }) {
-    // const ref = useRef(null);
-    // const [showErrorMessage] = useValidation([ref], validation);
     const showErrorMessage = false;
 
     return (
         <label className='form__label'>
             {label}
             <textarea
-                // ref={ref}
                 className='form__input'
                 name={label}
                 cols={30}
@@ -98,5 +83,31 @@ export function FormRow({ children }) {
 }
 
 export function Form({ children }) {
-    return <form className='form'>{children}</form>;
+    const [inputs, setInputs] = useState([]);
+
+    const addInput = (ref, validation) =>
+        // setInputs(inputs => {
+        //     let t = { ...inputs };
+        //     t[ref] = validation;
+        //     return t;
+        // });
+        setInputs(inputs => {
+            let t = [...inputs];
+            t.push({ ref, validation });
+            return t;
+        });
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        inputs.forEach(({ ref, validation }) => {
+            ///???
+        });
+    };
+
+    return (
+        <form className='form' onSubmit={e => handleSubmit(e)}>
+            <FormContext.Provider value={addInput}>{children}</FormContext.Provider>
+        </form>
+    );
 }

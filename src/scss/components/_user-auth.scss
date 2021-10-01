@@ -1,0 +1,26 @@
+.user-auth {
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__form {
+        padding: 30px 50px;
+        margin: 0 auto;
+        width: 17rem;
+        background-color: $color-lightgray;
+    }
+
+    &__btn-wrapper {
+        width: 25rem;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__btn {
+        font-size: 0.8rem;
+        padding: 0.6rem;
+    }
+}

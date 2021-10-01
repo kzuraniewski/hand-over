@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import pile from '../../assets/Background-Contact-Form.jpg';
 import ImageGroup from '../utility/ImageGroup';
+import { validateName, validateEmail } from '../../validation';
 
 export default function Contact() {
     const inputRefs = {
@@ -11,20 +12,12 @@ export default function Contact() {
 
     const [showSubmitSuccess, setShowSubmitSuccess] = useState(false);
     const [showError, setShowError] = useState({ name: false, email: false, message: false });
+
     const updateError = obj =>
         setShowError(old => {
             let t = { ...old, ...obj };
             return t;
         });
-
-    const validateEmail = email => {
-        const re =
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-        return re.test(String(email).toLowerCase());
-    };
-
-    const validateName = name => name.length && !name.trim().includes(' ');
 
     const validateMessage = message => message.length >= 120;
 

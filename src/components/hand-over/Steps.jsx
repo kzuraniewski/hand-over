@@ -14,18 +14,22 @@ export default function Steps() {
 
             <div className='hand-over__steps-wrapper'>
                 <div className='hand-over__step'>
+                    <div className='hand-over__step-border' />
                     <div className='hand-over__number'>1</div>
                     <div className='hand-over__desc'>Wybierz rzeczy</div>
                 </div>
                 <div className='hand-over__step'>
+                    <div className='hand-over__step-border' />
                     <div className='hand-over__number'>2</div>
                     <div className='hand-over__desc'>Spakuj je w worki</div>
                 </div>
                 <div className='hand-over__step'>
+                    <div className='hand-over__step-border' />
                     <div className='hand-over__number'>3</div>
                     <div className='hand-over__desc'>Wybierz fundację</div>
                 </div>
                 <div className='hand-over__step'>
+                    <div className='hand-over__step-border' />
                     <div className='hand-over__number'>4</div>
                     <div className='hand-over__desc'>Zamów kuriera</div>
                 </div>

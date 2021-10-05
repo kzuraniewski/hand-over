@@ -1,25 +1,48 @@
 .hand-over {
+    &__title {
+        font-size: 1.3rem;
+        text-align: center;
+
+        margin-bottom: 25px;
+    }
+
     &__steps-wrapper {
         display: flex;
         justify-content: space-between;
     }
 
     &__step {
-        width: 10rem;
-        height: 10rem;
-        transform: rotate(45deg);
-
-        border: 1px solid $color-black;
-
         display: flex;
         flex-direction: column;
+
+        padding: 3rem;
+
+        position: relative;
+
+        > *:not(:last-child) {
+            margin-bottom: 7px;
+        }
+    }
+
+    &__step-border {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        width: 8rem;
+        height: 8rem;
+
+        border: 1px solid $color-black;
     }
 
     &__number {
-        font-size: 0.9rem;
+        text-align: center;
     }
 
     &__desc {
         font-size: 0.8rem;
+        text-align: center;
     }
 }

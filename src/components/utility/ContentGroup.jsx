@@ -35,7 +35,7 @@ export default function ContentGroup({ title, children }) {
                 className='content-group__decoration'
             />
 
-            {children}
+            <div>{children}</div>
         </div>
     );
 }

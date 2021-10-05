@@ -1,0 +1,25 @@
+.hand-over {
+    &__steps-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__step {
+        width: 10rem;
+        height: 10rem;
+        transform: rotate(45deg);
+
+        border: 1px solid $color-black;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__number {
+        font-size: 0.9rem;
+    }
+
+    &__desc {
+        font-size: 0.8rem;
+    }
+}

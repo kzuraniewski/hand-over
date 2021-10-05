@@ -11,10 +11,6 @@ export default function Login() {
             .string()
             .min(8, 'Podane hasło jest za krótkie!')
             .required('Hasło jest wymagane!'),
-        confirmPassword: yup
-            .string()
-            .oneOf([yup.ref('password'), null], 'Hasła muszą być takie same!')
-            .required('Musisz potwierdzić hasło!'),
     });
 
     return (
@@ -47,22 +43,6 @@ export default function Login() {
                                 <ErrorMessage
                                     className='form__error-message'
                                     name='password'
-                                    component='div'
-                                />
-                            </div>
-
-                            <div className='form__input-wrapper'>
-                                <label htmlFor='confirmPassword' className='form__label'>
-                                    Potwierdź hasło
-                                </label>
-                                <Field
-                                    className='form__input'
-                                    type='password'
-                                    name='confirmPassword'
-                                />
-                                <ErrorMessage
-                                    className='form__error-message'
-                                    name='confirmPassword'
                                     component='div'
                                 />
                             </div>

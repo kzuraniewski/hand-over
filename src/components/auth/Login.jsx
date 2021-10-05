@@ -1,72 +1,89 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import ContentGroup from '../utility/ContentGroup';
-import { validatePassword, validateEmail } from '../../validation';
 import { Link } from 'react-router-dom';
+import { ErrorMessage, Field, Form, Formik } from 'formik';
+import * as yup from 'yup';
 
 export default function Login() {
-    const [showError, setShowError] = useState({ email: false, password: false });
-    const inputRefs = {
-        email: useRef(null),
-        password: useRef(null),
-    };
-
-    const handleSubmit = e => {
-        e.preventDefault();
-
-        setShowError(() => {
-            const [emailValue, passwordValue] = Object.values(inputRefs).map(
-                ref => ref.current.value
-            );
-
-            return {
-                email: !validateEmail(emailValue),
-                password: !validatePassword(passwordValue),
-            };
-        });
-    };
+    const validationSchema = yup.object({
+        email: yup.string().email('Podany email jest nieprawidłowy!').required(),
+        password: yup
+            .string()
+            .min(8, 'Podane hasło jest za krótkie!')
+            .required('Hasło jest wymagane!'),
+        confirmPassword: yup
+            .string()
+            .oneOf([yup.ref('password'), null], 'Hasła muszą być takie same!')
+            .required('Musisz potwierdzić hasło!'),
+    });
 
     return (
         <section className='user-auth'>
             <ContentGroup title='Zaloguj się'>
-                <form className='form' onSubmit={e => handleSubmit(e)}>
-                    {/* input */}
-                    <div className='user-auth__input-wrapper'>
-                        <label className='form__label'>
-                            Email
-                            <input ref={inputRefs.email} type='text' className='form__input' />
-                            {showError.email && (
-                                <div className='form__error-message'>
-                                    Podany email jest nieprawidłowy!
-                                </div>
-                            )}
-                        </label>
-                        <label className='form__label'>
-                            Hasło
-                            <input ref={inputRefs.password} type='text' className='form__input' />
-                            {showError.password && (
-                                <div className='form__error-message'>
-                                    Podane hasło jest za krótkie!
-                                </div>
-                            )}
-                        </label>
-                    </div>
+                <Formik
+                    initialValues={{ email: '', password: '', confirmPassword: '' }}
+                    validationSchema={validationSchema}
+                    onSubmit={() => {}}
+                >
+                    <Form>
+                        <div className='user-auth__inputs-wrapper'>
+                            <div className='form__input-wrapper'>
+                                <label htmlFor='email' className='form__label'>
+                                    Email
+                                </label>
+                                <Field className='form__input' type='email' name='email' />
+                                <ErrorMessage
+                                    className='form__error-message'
+                                    name='email'
+                                    component='div'
+                                />
+                            </div>
 
-                    {/* buttons  */}
-                    <div className='user-auth__btn-wrapper'>
-                        <Link
-                            to='/rejestracja'
-                            className='user-auth__btn btn btn--small btn--lowercase btn--borderless'
-                        >
-                            Załóż konto
-                        </Link>
+                            <div className='form__input-wrapper'>
+                                <label htmlFor='password' className='form__label'>
+                                    Hasło
+                                </label>
+                                <Field className='form__input' type='password' name='password' />
+                                <ErrorMessage
+                                    className='form__error-message'
+                                    name='password'
+                                    component='div'
+                                />
+                            </div>
 
-                        <input
-                            className='user-auth__btn btn btn--small btn--lowercase'
-                            type='submit'
-                            value='Zaloguj się'
-                        />
-                    </div>
-                </form>
+                            <div className='form__input-wrapper'>
+                                <label htmlFor='confirmPassword' className='form__label'>
+                                    Potwierdź hasło
+                                </label>
+                                <Field
+                                    className='form__input'
+                                    type='password'
+                                    name='confirmPassword'
+                                />
+                                <ErrorMessage
+                                    className='form__error-message'
+                                    name='confirmPassword'
+                                    component='div'
+                                />
+                            </div>
+                        </div>
+
+                        <div className='user-auth__btn-wrapper'>
+                            <Link
+                                to='/rejestracja'
+                                className='user-auth__btn btn btn--small btn--lowercase btn--borderless'
+                            >
+                                Załóż konto
+                            </Link>
+
+                            <input
+                                className='user-auth__btn btn btn--small btn--lowercase'
+                                type='submit'
+                                value='Zaloguj się'
+                            />
+                        </div>
+                    </Form>
+                </Formik>
             </ContentGroup>
         </section>
     );

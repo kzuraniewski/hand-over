@@ -19,10 +19,15 @@
         }
     }
 
+    &__input-wrapper {
+        margin-bottom: 20px;
+    }
+
     &__input {
         background: none;
         border: none;
         border-bottom: 1px solid $color-black;
+        font-size: 0.8rem;
 
         margin-top: 10px;
         width: 100%;
@@ -38,7 +43,6 @@
         font-weight: bolder;
 
         width: 100%;
-        margin-bottom: 20px;
         display: block;
 
         input,

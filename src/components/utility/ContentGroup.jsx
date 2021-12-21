@@ -4,9 +4,10 @@ import decoration from '../../assets/Decoration.svg';
 /**
  * @param {object} props
  * @param {string | string[]} props.title - the title of the content group
+ * @param {boolean} [props.fluid = false] - whether the content should be stretched
  * @param {object} props.children
  */
-export default function ContentGroup({ title, children }) {
+export default function ContentGroup({ title, fluid = false, children }) {
 	/**
 	 * If the title is an array, then returns it converted to JSX with <br />'s
 	 * @returns {JSX.Element[] | string | string[]}
@@ -35,7 +36,11 @@ export default function ContentGroup({ title, children }) {
 				className='content-group__decoration'
 			/>
 
-			{children}
+			<div
+				className={`content-group__wrapper${fluid ? ' content-group__wrapper--fluid' : ''}`}
+			>
+				{children}
+			</div>
 		</div>
 	);
 }

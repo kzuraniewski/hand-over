@@ -1,8 +1,10 @@
 .three-cols {
     background-color: $color-yellow;
 
-    display: flex;
-    justify-content: space-around;
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+    }
 
     &__col {
         padding: 30px;

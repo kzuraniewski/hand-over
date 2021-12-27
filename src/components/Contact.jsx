@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react';
 import pile from '../../assets/Background-Contact-Form.jpg';
-import ImageGroup from '../utility/ImageGroup';
-import { validateName, validateEmail } from '../../validation';
+import ImageGroup from './utility/ImageGroup';
+import { validateName, validateEmail } from '../validation';
 
 export default function Contact() {
 	const inputRefs = {

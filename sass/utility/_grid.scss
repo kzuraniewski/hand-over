@@ -1,0 +1,11 @@
+.grid {
+	display: grid;
+
+	grid-template-columns: repeat(auto-fit, minmax($grid-min-col-width, 1fr));
+	grid-auto-rows: $grid-min-row-height;
+
+	> * {
+		width: 100%;
+		height: 100%;
+	}
+}

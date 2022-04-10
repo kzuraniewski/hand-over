@@ -1,0 +1,35 @@
+.Container {
+	margin: 0 auto;
+
+	//xs
+	max-width: 100%;
+
+	//sm
+	@media only screen and (min-width: $screen-sm) {
+		max-width: 540px;
+	}
+
+	//md
+	@media only screen and (min-width: $screen-md) {
+		max-width: 720px;
+	}
+
+	//lg
+	@media only screen and (min-width: $screen-lg) {
+		max-width: 960px;
+	}
+
+	//xl
+	@media only screen and (min-width: $screen-xl) {
+		max-width: 1140px;
+	}
+
+	//xxl
+	@media only screen and (min-width: $screen-xxl) {
+		max-width: 1320px;
+	}
+}
+
+.Container.Container--fluid {
+	width: 100%;
+}
